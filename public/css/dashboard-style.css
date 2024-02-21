@@ -1,0 +1,196 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #7432aa; 
+}
+
+/* Header */
+header {
+  background-color: #4c2673;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+  border-bottom: 4px solid orange; 
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 15%;
+  padding: 10px;
+  background-color: #f4ebfa;
+  border-right: 2px solid orange;  
+  min-width: 20%;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+  color: #555;
+}
+
+.sidebar li:hover {
+  color: #aaa;
+}
+
+/* Profile and Articles */
+.profile-and-articles {
+  width: 55%;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.profile {
+  display: flex;
+  background-color: #eee;
+  border-left: 4px solid orange;  
+}
+
+.avatar-container {
+  width: 15%;
+}
+
+
+.user-info {
+  width: 75%;
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.user-info h3, .user-info p {
+  margin: 10px 0;
+}
+
+.articles {
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.articles div {
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+}
+
+/* Data and Like Wrapper */
+.data-and-like-wrapper {
+  width: 25%;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.personal-data {
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.you-may-also-like {
+  font-family: 'OPTICopperplate-Heavy', 'Copperplate', 'Copperplate Gothic Light', fantasy;
+  color: purple;
+}
+
+/* Footer */
+footer {
+  background-color: #4c2673;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-top: 4px solid orange;  
+}
+
+@media only screen and (max-width: 600px) {
+  .main-content {
+      flex-direction: column;
+      padding: 10px;
+  }
+  .sidebar, .profile-and-articles, .data-and-like {
+      width: 100%;
+  }
+  .profile {
+      flex-direction: column;
+      align-items: center;
+  }
+  .avatar-container, .user-info {
+      width: 100%;
+  }
+  .avatar-container {
+      text-align: center;
+  }
+  .articles, .personal-data, .you-may-also-like {
+      padding: 5px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 749px) {
+
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+}
+.sidebar, .profile-and-articles, .data-and-like {
+    width: 100%;
+}
+.profile {
+    flex-direction: column;
+    align-items: center;
+}
+.avatar-container, .user-info {
+    width: 100%;
+}
+.avatar-container {
+    text-align: center;
+}
+.articles, .personal-data, .you-may-also-like {
+    padding: 5px;
+}
+
+  .profile-and-articles, .data-and-like {
+      padding: 10px;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    padding: 10px 0; 
+}
+.sidebar ul {
+    display: flex; 
+    width: 100%; 
+    justify-content: space-around; 
+    padding: 0; 
+}
+.sidebar li {
+    margin-bottom: 0; 
+}
+
+}

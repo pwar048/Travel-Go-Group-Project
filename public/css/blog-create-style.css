@@ -1,0 +1,93 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #b697d6;
+    color: #4c3a5a;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #fac003;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(136, 26, 211, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #fd9842;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffaa60;
+}
+
+a {
+    color: #881ad3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a74fe1;
+}
+
+@media only screen and (max-width: 992px) {
+    body {
+        padding: 0 20px;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    textarea {
+        height: 200px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,226 @@
+<h1>Edit Blog Page</h1>
+{{#if toastMessage}}
+<p style="color: green;">{{toastMessage}}</p>
+{{/if}}
+
+<form id="editBlogForm" action="/updateBlog/{{blog.id}}" method="POST">
+  <label for="blog_id">Blog ID:</label>
+  <input type="text" id="blog_id" name="blog_id" value="{{blog.id}}" class="readonly-input"><br>
+
+ <script src="https://cdn.tiny.cloud/1/wdlw6qldzmhfkmhrz5c287gp1tiepnuoik8jw5cxuqqf5k7i/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
+
+  <style>
+    .readonly-input {
+      pointer-events: none;
+      background-color: #f0f0f0;
+    }
+  </style>
+
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="{{blog.title}}"><br>
+
+  <label for="blogDate">Date Created:</label>
+  <input type="date" id="blogDate" name="blogDate" value="{{blog.blog_date}}" readonly disabled>
+  <input type="time" id="blogTime" name="blogTime" value="{{blog.blog_time}}" readonly disabled><br>
+
+  <label for="article">Article Content:</label><br>
+  <textarea id="article" name="article" rows="10" cols="50">{{blog.article}}</textarea><br>
+
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+      ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+    });
+  </script>
+
+
+
+  <label for="locationOfInterest">Location of Interest:</label>
+  <input type="text" id="locationOfInterest" name="locationOfInterest" value="{{blog.location_of_interest}}"><br>
+
+  <label for="videoLink">Video Link:</label>
+  <input type="text" id="videoLink" name="videoLink" value="{{blog.video_link}}" size="40"><br>
+
+  <label for="imgLink">Image Link:</label>
+  <input type="text" id="imgLink" name="imgLink" value="{{blog.img_link}}" size="40"><br>
+
+  <button type="submit">Save Changes</button>
+</form>
+
+<a href="/dashboard">go to dashboard</a>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,500&display=swap");
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+
+  :root {
+    --primary: #881ad3;
+    --secondary: #fd9842;
+    --terinary: #e2e2e2;
+  }
+
+  #header {
+    padding: 7px 15px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--terinary);
+  }
+
+  .logo-container {
+    display: block;
+    height: 100%;
+  }
+
+  .logo {
+    height: 100%;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav li {
+    list-style: none;
+    margin: 0px 5px;
+  }
+
+  .nav li a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--primary);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  .container {
+    max-width: 950px;
+    margin: auto;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  }
+
+  .blog-card {
+    background-color: #881ad3;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .blog-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .blog-title {
+    margin: 5px 0px 10px 0px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .blog-desc {
+    color: white;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  .blog-btn {
+    color: black;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: var(--secondary);
+  }
+
+  .blog-filter-container {
+    margin: 10px 0px;
+  }
+
+  .blog-filter {
+    padding: 10px;
+    max-width: 950px;
+    margin: auto;
+    background-color: var(--terinary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .search-box-container {
+    display: flex;
+  }
+
+  .feather-search {
+    width: 14px;
+    height: 14px;
+  }
+
+  .search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--primary);
+  }
+
+  .search-btn {
+    padding: 3px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sort-by-selection {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--primary);
+  }
+</style>

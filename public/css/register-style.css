@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+/* Global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #7432aa; 
+  color: #fff;
+}
+
+.container {
+  background-color: #fff;
+  color: #4c2673; 
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+p {
+  background-color: #ff9900; 
+  padding: 10px;
+  border-radius: 4px;
+}
+
+h1 {
+  color: #4c2673; 
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea#self-introduction {
+  width: 94%;  
+  height: 100px;   
+  max-height: 100px;   
+  resize: none; 
+  overflow-y: auto;
+}
+
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4c2673; 
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #633d99;
+}
+
+#avatar-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.avatar-selected {
+  border-color: #ff9900; 
+}
+
+#confirm-avatar, #registrationBtn {
+  background-color: #ff9900; 
+}
+
+#confirm-avatar:hover, #registrationBtn:hover {
+  background-color: #ffaa33;
+}
+
+#confirm-avatar {
+    margin-bottom: 20px; 
+  }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;  
+        padding: 10px;
+    }
+    .flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 999px) {
+    .container {
+        width: 70%;  
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 50%;  
+    }
+}

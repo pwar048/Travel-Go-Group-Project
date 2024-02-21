@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="/css/profile-edit-style.css">
+    <script src="/js/userProfile.js"></script>
+</head>
+<h1>Edit Profile</h1>
+{{#if toastMessage}}
+<p style="color: green;">{{toastMessage}}</p>
+{{/if}}
+<form action="/updateProfile" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="{{user.username}}" disabled><br><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{user.name}}"><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" value="{{user.dob}}" disabled><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description">{{user.description}}</textarea><br><br>
+
+    <input type="submit" value="Update Profile">
+</form>
+<form id="deleteAccountForm" action="/deleteAccount" method="post">
+    <button id="delete-account-btn" type="submit">Delete My Account</button>
+</form>
+    <a href="/dashboard">go to dashboard</a>

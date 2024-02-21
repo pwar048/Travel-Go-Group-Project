@@ -1,0 +1,122 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed red;
+}
+
+
+.main-content {
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px dashed green;
+}
+
+
+
+
+.sidebar {
+    width: 15%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px dashed blue;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+
+
+
+.profile-and-articles {
+  width: 55%;
+  box-sizing: border-box;
+}
+
+.profile {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px dashed orange;
+}
+
+.avatar-container {
+  width: 25%;
+  padding-right: 15px;
+}
+
+.user-info {
+  width: 75%;
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+}
+
+.user-info h3, .user-info p {
+  margin: 10px 0;
+}
+
+.articles {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px dashed purple;
+}
+
+.articles div {
+  margin-bottom: 10px;
+}
+
+
+
+.data-and-like-wrapper {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px dashed yellow;
+}
+
+
+.personal-data {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px dashed pink;
+}
+
+.you-may-also-like {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px dashed brown;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed grey;
+}

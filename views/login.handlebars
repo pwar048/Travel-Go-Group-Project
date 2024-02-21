@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="/css/login-style.css">
+</head>
+<div class="container">
+
+    {{! Display a toast message if one was provided. }}
+    {{#if toastMessage}}
+    <p>{{toastMessage}}</p>
+    {{/if}}
+
+    <h1>Login</h1>
+    <form action="./login" method="POST">
+        <div class="flex-col mb">
+            <em>for testing:</em>
+            <em>username: test</em> , <em>password:test111</em><br>
+
+            <label for="txtUsername">Username:</label>
+            <input type="text" name="username" id="txtUsername" required>
+        </div>
+        <div class="flex-col mb">
+            <label for="txtPassword">Password:</label>
+            <input type="password" name="password" id="txtPassword" required>
+        </div>
+        {{!-- <input type="checkbox" name="Remember Password">
+        <label for="">Remember Password</label>
+        <input type="checkbox" name="" id="">
+        <label for="">Auto-Login</label> --}}
+
+        <div class="flex-row justify-sb align-center">
+            <button type="submit">Login</button>
+        </div>
+    
+        {{!-- implement with sarah's login.html page --}}
+    </form>
+
+</div>

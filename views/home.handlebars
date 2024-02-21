@@ -1,0 +1,142 @@
+
+
+<main id="main">
+  {{#each data}}
+  <div class="blog-cards">
+    <section class="article-section">
+      <h1>{{this.title}}</h1>
+      <div id="date-time">Publish: {{this.blog_date}} {{this.blog_time}}</div>
+      <img class="blog-img" src="{{this.img_link}}" alt="Article Image">
+      <p>Video Link: <a href="{{this.video_link}}">{{this.video_link}}</p></a>
+      <div id="main-content">
+        {{{this.article}}}
+      </div>
+    </section>
+
+    <aside class="author-section">
+      <h2>Author</h2>
+      <img src="{{this.avatar_link}}" alt="Author Avatar">
+      <a href="#">{{this.username}}</a>
+      <p>{{this.description}}</p>
+      <ul>
+        {{#each author.otherArticles}}
+        <li><a href="{{this.link}}">{{this.title}}</a></li>
+        {{/each}}
+      </ul>
+    </aside>
+
+    <section class="comments-section">
+      <h2>Comments</h2>
+      {{#each this.comments}}
+      <div class="comment">
+        <img src="{{this.avatar_link}}" alt="Commenter Avatar">
+        <p><em>{{{this.username}}}</em></p>
+          <div>{{this.text}}</div>
+          <div class="comment-time">{{this.date}}</div>
+      </div>
+      {{/each}}
+
+      <form action="/submitComment?blog_id={{this.id}}" method="post">
+        <input type="hidden" name="blog_id" value="{{this.id}}">
+        <label for="text">Leave your Comment:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+    </section>
+  </div>
+
+  {{/each}}
+
+</main>
+
+
+<style>
+  /* CSS for blog cards */
+  .blog-cards {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    /* Optional: Border around each blog card */
+    margin-bottom: 20px;
+    /* Add margin between blog cards */
+    background-color: #c368ff;
+  }
+
+  .blog-image {
+    width: 100%;
+    /* Set initial width of the image */
+  }
+
+  /* Style article section */
+  .article-section {
+    width: 60%;
+    /* Adjust the width as needed */
+    padding: 20px;
+  }
+
+  .article-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #date-time {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  #main-content {
+    margin-bottom: 10px;
+  }
+
+  /* Style author section */
+  .author-section {
+    width: 30%;
+    /* Adjust the width as needed */
+    padding: 20px;
+  }
+
+  .author-section img {
+    width: 100px;
+    /* Set author avatar width */
+    height: 100px;
+    /* Set author avatar height */
+    border-radius: 50%;
+    /* Make the avatar round */
+    margin-bottom: 10px;
+  }
+
+  .author-section a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Style comments section */
+  .comments-section {
+    padding: 20px;
+  }
+
+  .comments-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .comment {
+    border-bottom: 1px solid #ccc;
+    /* Optional: Add a border between comments */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .comment img {
+    width: 50px;
+    /* Set comment avatar width */
+    height: 50px;
+    /* Set comment avatar height */
+    border-radius: 50%;
+    /* Make the avatar round */
+    margin-right: 10px;
+  }
+</style>
